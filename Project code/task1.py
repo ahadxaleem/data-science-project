@@ -7,12 +7,14 @@ def task1():
     f = open(r'C:\Users\bbb\Desktop\proj1\course\data\a1\reviews\HealthStory.json')
     data=json.load(f)
     y=len(data)
-    z=0
     f2=open(r'C:\Users\bbb\Desktop\proj1\course\data\a1\engagements\HealthStory.json')
     data2=json.load(f2)
+    tweets=list()
     for i in data2.values():
-        z+=len(i['tweets'])
+        tweets.extend(i['tweets'])
         # print(i)
+    
+    z=len(set(tweets))
     dictionary={ 
     "Total number of articles": x, 
     "Total number of reviews": y,  
