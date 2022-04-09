@@ -1,0 +1,50 @@
+news_source,num_articles,avg_rating
+The Guardian,21,2.2857142857142856
+Reuters,42,2.619047619047619
+ABCNews.com,13,2.3846153846153846
+Health Day,172,3.11046511627907
+NPR,87,3.4482758620689653
+Newsweek,26,3.0
+USA Today,40,3.475
+CNN,51,3.2745098039215685
+FoxNews.com,19,2.1052631578947367
+Bloomberg,14,3.5714285714285716
+Associated Press,69,3.869565217391304
+The New York Times,128,3.5546875
+The Philadelphia Inquirer,44,3.6363636363636362
+Reuters Health,166,3.3132530120481927
+STAT,22,3.909090909090909
+The Washington Post,56,3.0714285714285716
+US News & World Report,17,2.9411764705882355
+NBCNews.com,31,3.032258064516129
+The Wall Street Journal,106,3.5849056603773586
+BuzzFeed,10,3.6
+Vox,13,4.461538461538462
+Los Angeles Times,97,3.2577319587628866
+Time,34,2.676470588235294
+The Boston Globe,13,3.3846153846153846
+CBSNews.com,29,2.413793103448276
+Medical Daily,5,2.2
+FiveThirtyEight,4,4.0
+Slate,2,2.5
+Chicago Tribune,12,2.5
+Houston Chronicle,1,2.0
+HealthDay,95,2.8105263157894735
+TIME,8,2.75
+AP Associated Press,33,3.787878787878788
+MSNBC,15,2.3333333333333335
+CNN Health,17,2.764705882352941
+WebMD,136,2.8161764705882355
+Star Tribune,1,1.0
+Detroit Free Press,1,5.0
+The Dallas Morning News,2,1.5
+Des Moines Register,1,2.0
+The Arizona Republic,1,2.0
+The Denver Post,4,1.75
+Orlando Sentinel,3,1.6666666666666667
+Hartford Courant,1,3.0
+The Houston Chronicle,5,2.0
+Sun-Sentinel,1,5.0
+The Mercury News,1,2.0
+Chicago Sun-Times,1,2.0
+The Oregonian,1,5.0
