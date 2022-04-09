@@ -13,6 +13,7 @@ def task2():
         
         # writing the fields 
         csvwriter.writerow(fields) 
+        #writing all the rows
         for i in data:
             row=[]
             row.append(i['news_id'])
