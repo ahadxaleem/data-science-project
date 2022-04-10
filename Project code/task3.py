@@ -46,6 +46,8 @@ def task3():
                         graph[date_From_Timestamp.year]=1
                     # print(date_From_Timestamp)
                     # print(filename)
+        plt.xlabel("Year")
+        plt.ylabel("No of Articles")
         # Plotting barchart
         plt.bar(graph.keys(), graph.values())
         
