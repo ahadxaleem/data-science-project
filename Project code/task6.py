@@ -22,12 +22,12 @@ def task6():
                 filtered_list_of_words.sort()
                 for i in filtered_list_of_words:
                     if i in dictionary:
-                        if filename.name in dictionary[i]:
+                        if filename.name[:19] in dictionary[i]:
                             continue
                         else:
-                            dictionary[i].append(filename.name)
+                            dictionary[i].append(filename.name[:19])
                     else:
-                        dictionary[i]=[filename.name]
+                        dictionary[i]=[filename.name[:19]]
                 # print(dictionary)
                 with open("task6.json", "w") as outfile:
                     json.dump(dictionary, outfile) 
