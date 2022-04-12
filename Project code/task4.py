@@ -24,16 +24,20 @@ def task4():
                     source[i['news_source']].append(i['rating'])
                 else:
                     source[i['news_source']]=[i['rating']]
+        sorted_source={}
+        # Dictionary’s value sorted in keys. 
+        for i in sorted (source) :
+            sorted_source[i]=source[i]
         graph={}
-        for x in source:
+        for x in sorted_source:
             row=[]
             row.append(x)
-            row.append(len(source[x]))
-            row.append(sum(source[x])/len(source[x]))
+            row.append(len(sorted_source[x]))
+            row.append(sum(sorted_source[x])/len(sorted_source[x]))
             # writing the data rows 
             csvwriter.writerow(row)
-            if len(source[x])>=5:
-                graph[x]=sum(source[x])/len(source[x])
+            if len(sorted_source[x])>=5:
+                graph[x]=sum(sorted_source[x])/len(sorted_source[x])
         sortedgraph=dict(sorted(graph.items(), key = lambda kv: kv[1]))
         plt.xticks(rotation='vertical')
         # Plotting barchart
