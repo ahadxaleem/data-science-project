@@ -44,6 +44,6 @@ def task4():
         plt.bar(sortedgraph.keys(), sortedgraph.values())
         
         # Saving the figure.
-        plt.savefig("task4b.png")
+        plt.savefig("task4b.png",bbox_inches ="tight")
 
     return
