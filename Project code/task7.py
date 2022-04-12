@@ -1,6 +1,38 @@
 import json
 import math
 import csv
+import matplotlib.pyplot as plt
+  
+# Function returns N largest elements
+def Nmaxelements(list1, N):
+    final_list = {}
+  
+    for i in range(0, N): 
+        max1 = 0
+        index1=''
+        for j in list1:     
+            if list1[j] > max1:
+                max1 = list1[j]
+                index1=j  
+        final_list[index1]=max1
+        list1.pop(index1)
+    return final_list
+
+# Function returns N smallest elements
+def Nminelements(list1, N):
+    final_list = {}
+  
+    for i in range(0, N): 
+        max1 = 0
+        index1=''
+        for j in list1:     
+            if list1[j] < max1:
+                max1 = list1[j]
+                index1=j  
+        final_list[index1]=max1
+        list1.pop(index1)
+    return final_list
+
 def task7():
     # Opening JSON file
     f = open(r'task6.json')
@@ -50,7 +82,6 @@ def task7():
             Or[k]=pr[k]/(1-pr[k])
             of[k]=pf[k]/(1-pf[k])
             lof[k]=round(math.log10(of[k]/Or[k]),5)
-            # lof[k]=of[k]/Or[k]
     # field names 
     fields = ['word', 'log_odds_ratio']
     # writing to csv file 
@@ -67,5 +98,27 @@ def task7():
             row.append(lof[y])
             # writing the data rows 
             csvwriter.writerow(row)
+    plt.xlabel("log_odds_ratio")
+    plt.ylabel("Count")
+    # Plotting histogram
+    plt.hist(lof.values(),bins=30)
+    
+    # Saving the figure.
+    plt.savefig("task7b.png")
+    figure, axis = plt.subplots(1,2)
+    # plt.xticks(rotation='vertical')
+    # figure.tight_layout()
+    max=Nmaxelements(lof,15)
+    for tick in axis[0].get_xticklabels():
+        tick.set_rotation(90)
+    axis[0].bar(max.keys(),max.values())
+    axis[0].set_title("highest odds ratios")
+    min=Nminelements(lof,15)
+    for tick in axis[1].get_xticklabels():
+        tick.set_rotation(90)
+    axis[1].bar(min.keys(),min.values())
+    axis[1].set_title("lowest odds ratios")
+    # Saving the figure.
+    plt.savefig("task7c.png",bbox_inches ="tight")
     # print(Or)
     return
