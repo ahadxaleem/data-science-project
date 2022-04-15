@@ -1,7 +1,14 @@
 import json
 import csv
+import os
 import matplotlib.pyplot as plt
 def task4():
+    # assign directory
+    directory = r'C:\Users\bbb\Desktop\proj1\course\data\a1\content\HealthStory'
+    news_id=[]
+    for filename in os.scandir(directory):
+            if filename.is_file():
+                news_id.append(filename.name[:19])
     # Opening JSON file
     f = open(r'C:\Users\bbb\Desktop\proj1\course\data\a1\reviews\HealthStory.json')
     data=json.load(f)
@@ -17,13 +24,14 @@ def task4():
         source={}
         #writing all the rows
         for i in data:
-            if i['news_source']=="":
-                continue
-            else:
-                if i['news_source'] in source:
-                    source[i['news_source']].append(i['rating'])
+            if i['news_id'] in news_id:
+                if i['news_source']=="":
+                    continue
                 else:
-                    source[i['news_source']]=[i['rating']]
+                    if i['news_source'] in source:
+                        source[i['news_source']].append(i['rating'])
+                    else:
+                        source[i['news_source']]=[i['rating']]
         sorted_source={}
         # Dictionary’s value sorted in keys. 
         for i in sorted (source) :
